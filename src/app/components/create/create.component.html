@@ -1,0 +1,16 @@
+<form>
+    <h1>Criar Mesa</h1>
+    <mat-form-field class="form">
+      <mat-label>ID da mesa</mat-label>
+      <input matInput [(ngModel)]="mesa.id" name="mesa.id" placeholder="Introduzir ID da mesa" />
+    </mat-form-field>
+    <br>
+    <mat-form-field class="form">
+        <mat-label>Capacidade da mesa</mat-label>
+        <input matInput [(ngModel)]="mesa.capacidade" name="mesa.capacidade" placeholder="Introduzir capacidade da Mesa" />
+    </mat-form-field>
+    <div>
+        <button (click)="create()" mat-stroked-button color="primary">CRIAR</button>
+        <button (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+</form>

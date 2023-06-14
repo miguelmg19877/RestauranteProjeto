@@ -1,0 +1,23 @@
+<form [formGroup]="mesaForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="id" readonly>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Marca</mat-label>
+        <input matInput formControlName="marca">
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Tipo</mat-label>
+        <input matInput formControlName="tipo">
+    </mat-form-field>
+    
+    <button mat-stroked-button color="primary" type="submit">
+        Guardar Alterações
+    </button>
+    
+    <button (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+    
+</form>

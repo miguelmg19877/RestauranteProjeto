@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/fe9ba883-aa78-448e-932f-384bb15bce09/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/carroappserviceprod",
+    "appService.deploySubpath": ""
+}
