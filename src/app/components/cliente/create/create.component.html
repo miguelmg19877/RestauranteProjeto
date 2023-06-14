@@ -1,0 +1,16 @@
+<form>
+    <h1>Inserir Novo Cliente</h1>
+    <mat-form-field class="form">
+      <mat-label>Nome do Cliente</mat-label>
+      <input matInput [(ngModel)]="cliente.nome" name="cliente.nome" placeholder="Introduzir nome do cliente" />
+    </mat-form-field>
+    <br>
+    <mat-form-field class="form">
+        <mat-label>Telefone do cliente</mat-label>
+        <input matInput [(ngModel)]="cliente.telefone" name="cliente.telefone" placeholder="Introduzir telefone do cliente" />
+    </mat-form-field>
+    <div>
+        <button (click)="create()" mat-stroked-button color="primary">CRIAR</button>
+        <button (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+</form>

@@ -17,7 +17,7 @@ import { v4 as uuidv4 } from 'uuid';
 export class CreateComponent implements OnInit {
 
   mesa: Mesa = {
-    id: uuidv4(),
+    id: '',
     capacidade: 0
   }
 
@@ -27,7 +27,7 @@ export class CreateComponent implements OnInit {
     create(): void {
       this.service.create(this.mesa).subscribe((resposta) => {
         this.service.message('Mesa criado com sucesso!');
-        this.router.navigate(['']);
+        this.router.navigate(['mesas']);
       });
     }
     cancel (): void {

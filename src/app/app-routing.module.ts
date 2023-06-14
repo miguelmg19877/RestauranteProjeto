@@ -3,18 +3,28 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReadMesaComponent } from './read-mesa/read-mesa.component';
 import { CreateComponent } from './components/create/create.component';
 import { UpdateComponent } from './components/update/update.component';
+import { ReadClientesComponent } from './read-clientes/read-clientes.component';
+import { Create2Component } from './components/cliente/create/create.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'mesas',
     component: ReadMesaComponent
   },
   {
-    path: 'create',
+    path: 'clientes',
+    component: ReadClientesComponent
+  },
+  {
+    path: 'mesas/create',
     component: CreateComponent
   },
   {
-    path: 'update/:id',
+    path: 'clientes/create',
+    component: Create2Component
+  },
+  {
+    path: 'mesas/update/:id',
     component: UpdateComponent
   }
 ];

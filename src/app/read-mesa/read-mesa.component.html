@@ -4,7 +4,7 @@
         <p>{{ item.id }}</p>
         <p>{{ item.capacidade }}</p>
         <div class="actions">
-            <button [routerLink]="['/update', item.id]" class="edit-carro" mat-raised-button color="primary">Editar</button>
+            <button [routerLink]="['/mesas/update', item.id]" class="edit-carro" mat-raised-button color="primary">Editar</button>
             <button mat-raised-button color="warn">Excluir</button>
         </div>
     </mat-card>

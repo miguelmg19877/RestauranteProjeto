@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { UpdateComponent } from './components/update/update.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ReadClientesComponent } from './read-clientes/read-clientes.component';
+import { Create2Component } from './components/cliente/create/create.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     ReadMesaComponent,
     CreateComponent,
-    UpdateComponent
+    UpdateComponent,
+    ReadClientesComponent,
+    Create2Component
   ],
   imports: [
     BrowserModule,

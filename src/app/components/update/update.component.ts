@@ -31,11 +31,11 @@ export class UpdateComponent implements OnInit {
         const mesa: Mesa = this.mesaForm.value;
         this.service.update(mesa).subscribe((resposta) => {
           this.service.message(resposta);
-          this.router.navigate(['']);
+          this.router.navigate(['mesas']);
         });
       }
     }
     cancel (): void {
-      this.router.navigate(['']);
+      this.router.navigate(['mesas']);
     }
 }
