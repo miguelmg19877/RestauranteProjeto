@@ -1,4 +1,4 @@
 export interface Mesa {
-    id?: string,
+    id: string,
     capacidade: number
 }

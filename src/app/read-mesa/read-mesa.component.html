@@ -1,11 +1,12 @@
 <button mat-raised-button class="novo" routerLink="create">Nova Mesa</button>
+<button mat-raised-button class="voltar" routerLink="">Voltar</button>
 <div class="Container" *ngFor="let item of list">
-    <mat-card class="simple-card">
-        <p>{{ item.id }}</p>
-        <p>{{ item.capacidade }}</p>
+    <mat-card [@slideInOut] class="simple-card">
+        <p>ID: {{ item?.id }}</p>
+        <p>Capacidade: {{ item.capacidade }}</p>
         <div class="actions">
             <button [routerLink]="['/mesas/update', item.id]" class="edit-carro" mat-raised-button color="primary">Editar</button>
-            <button mat-raised-button color="warn">Excluir</button>
+            <button *ngIf="item?.id" (click)="openConfirmationDialog(item)" mat-raised-button color="warn">Excluir</button>
         </div>
     </mat-card>
 </div>

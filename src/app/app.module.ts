@@ -18,6 +18,13 @@ import { UpdateComponent } from './components/update/update.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReadClientesComponent } from './read-clientes/read-clientes.component';
 import { Create2Component } from './components/cliente/create/create.component';
+import { UpdateclienteComponent } from './components/cliente/updatecliente/updatecliente.component';
+import { CreatereservaComponent } from './components/reservas/createreserva/createreserva.component';
+import { UpdatereservaComponent } from './components/reservas/updatereserva/updatereserva.component';
+import { ReadReservasComponent } from './read-reservas/read-reservas.component';
+import { HomeComponent } from './components/home/home.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +35,13 @@ import { Create2Component } from './components/cliente/create/create.component';
     CreateComponent,
     UpdateComponent,
     ReadClientesComponent,
-    Create2Component
+    Create2Component,
+    UpdateclienteComponent,
+    CreatereservaComponent,
+    UpdatereservaComponent,
+    ReadReservasComponent,
+    HomeComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +53,8 @@ import { Create2Component } from './components/cliente/create/create.component';
     HttpClientModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

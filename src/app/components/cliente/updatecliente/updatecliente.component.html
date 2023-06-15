@@ -1,0 +1,18 @@
+<form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome">
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="telefone">
+    </mat-form-field>
+    
+    <button mat-stroked-button color="primary" type="submit">
+        Guardar Alterações
+    </button>
+    
+    <button (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+    
+</form>

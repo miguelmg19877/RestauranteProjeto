@@ -3,15 +3,18 @@ img {
    }
     
    .header {
-    justify-content: center;
+    justify-content: space-around;
     height: 10%;
+    color: black;
+    background-color: #fff;
    }
     
    span {
-    display: flex;
-    align-items: center;
-   }
-    
-   h1 {
-    padding-left: 1.2rem;
-   }
+    color: #00f7ff;
+    display : flex;
+    margin-top: 10px;
+}
+
+h1 {
+    padding-left: 1.5rem;
+}

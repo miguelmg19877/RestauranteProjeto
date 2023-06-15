@@ -1,0 +1,18 @@
+<div class="container">
+    <mat-card [@slideMesas] class="mesa">
+        <img src="../../../assets/img/mesa.png" alt="logo" class="logo">
+        <br>
+        <button (click)="mesas()" mat-raised-button class="novo" routerLink="create">Mesas</button>
+    </mat-card>
+    <mat-card [@slideClientes] class="cliente">
+        <img src="../../../assets/img/cliente.png" alt="logo" class="clientelogo">
+        <br>
+        <button (click)="clientes()" mat-raised-button class="novo" routerLink="create">Clientes</button>
+    </mat-card>
+    <mat-card [@slideReservas] class="reserva">
+        <img src="../../../assets/img/reserva.png" alt="logo" class="reservalogo">
+        <br>
+        <button (click)="reservas()" mat-raised-button class="novo" routerLink="create">Reservas</button>
+    </mat-card>
+    </div>
+    

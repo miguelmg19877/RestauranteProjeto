@@ -1,0 +1,27 @@
+<form>
+    <h1>Inserir Nova Reserva</h1>
+    <mat-form-field class="form">
+      <mat-label>ID do Cliente</mat-label>
+      <input matInput [(ngModel)]="reserva.clienteid" name="reserva.clienteid" placeholder="Introduzir ID do cliente" />
+    </mat-form-field>
+    <br>
+    <mat-form-field class="form">
+        <mat-label>ID da Mesa</mat-label>
+        <input matInput [(ngModel)]="reserva.mesaid" name="reserva.mesaid" placeholder="Introduzir ID da mesa" />
+    </mat-form-field>
+    <br>
+    <mat-form-field class="form">
+        <mat-label>Capacidade da Mesa</mat-label>
+        <input matInput [(ngModel)]="reserva.capacidade" name="reserva.capacidade" placeholder="Introduzir capacidade da Mesa" />
+    </mat-form-field>
+    <br>
+    <mat-form-field class="form">
+        <mat-label>Data da Reserva</mat-label>
+        <input matInput [(ngModel)]="reserva.data" name="reserva.data" placeholder="Introduzir data da reserva" />
+    </mat-form-field>
+
+    <div>
+        <button (click)="create()" mat-stroked-button color="primary">CRIAR</button>
+        <button (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+</form>

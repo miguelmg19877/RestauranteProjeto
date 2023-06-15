@@ -1,12 +1,13 @@
 <button mat-raised-button class="novo" routerLink="create">Novo Cliente</button>
+<button mat-raised-button class="voltar" routerLink="">Voltar</button>
 <div class="Container" *ngFor="let item of list">
-    <mat-card class="simple-card">
-        <p>{{ item.id }}</p>
-        <p>{{ item.nome }}</p>
-        <p>{{ item.telefone }}</p>
+    <mat-card [@slideInOut] class="simple-card">
+        <p>ID: {{ item.id }}</p>
+        <p>Nome: {{ item.nome }}</p>
+        <p>Nº Telefone: {{ item.telefone }}</p>
         <div class="actions">
-            <button [routerLink]="['/update', item.id]" class="edit-carro" mat-raised-button color="primary">Editar</button>
-            <button mat-raised-button color="warn">Excluir</button>
+            <button [routerLink]="['/clientes/update', item.id]" class="edit-carro" mat-raised-button color="primary">Editar</button>
+            <button mat-raised-button color="warn" class="excluir-carro">Excluir</button>
         </div>
     </mat-card>
 </div>

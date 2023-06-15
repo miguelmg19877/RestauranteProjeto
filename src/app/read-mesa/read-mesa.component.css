@@ -8,7 +8,7 @@ div.container {
 }
 
 .simple-card {
-    background-color: azure;
+    background-color: #FFFDF0;
     width: 80%;
     margin: 0 auto;
     margin-top: 20px;
@@ -16,6 +16,17 @@ div.container {
 }
 
 .novo {
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px auto;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.voltar {
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;

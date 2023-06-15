@@ -1,0 +1,16 @@
+<button mat-raised-button class="novo" routerLink="create">Nova Reserva</button>
+<button mat-raised-button class="voltar" routerLink="">Voltar</button>
+<div class="Container" *ngFor="let item of list">
+    <mat-card [@slideInOut] class="simple-card">
+        <p>ID: {{ item.id }}</p>
+        <p>ID Do Cliente: {{ item.clienteid }}</p>
+        <p>ID Da Mesa: {{ item.mesaid }}</p>
+        <p>Capacidade: {{ item.capacidade }}</p>
+        <p>Data: {{ item.data }}</p>
+
+        <div class="actions">
+            <button [routerLink]="['/reservas/update', item.id]" class="edit-carro" mat-raised-button color="primary">Editar</button>
+            <button mat-raised-button color="warn">Excluir</button>
+        </div>
+    </mat-card>
+</div>

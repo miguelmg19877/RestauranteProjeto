@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { Cliente } from '../models/cliente';
-import { ClienteService } from '../services/cliente.service';
-import { trigger, transition, animate, style } from '@angular/animations'
-
+import { Reserva } from '../models/reserva';
+import { ReservaService } from '../services/reserva.service';
+import { trigger, transition, animate, style } from '@angular/animations';
 
 @Component({
-  selector: 'app-read-cliente',
-  templateUrl: './read-clientes.component.html',
-  styleUrls: ['./read-clientes.component.css'],
+  selector: 'app-read-reservas',
+  templateUrl: './read-reservas.component.html',
+  styleUrls: ['./read-reservas.component.css'],
   animations: [
     trigger('slideInOut', [
       transition(':enter', [
@@ -22,11 +21,11 @@ import { trigger, transition, animate, style } from '@angular/animations'
     ])
   ]
 })
-export class ReadClientesComponent implements OnInit{
+export class ReadReservasComponent implements OnInit{
   
-    list: Cliente[] = [];
+    list: Reserva[] = [];
 
-    constructor(private service: ClienteService) { }
+    constructor(private service: ReservaService) { }
   
     ngOnInit(): void {
       this.findAll();
@@ -41,7 +40,7 @@ export class ReadClientesComponent implements OnInit{
 
     delete(id: string): void {
       this.service.delete(id).subscribe((resposta) => {
-        this.service.message('Cliente excluída com sucesso!');
+        this.service.message('Reserva excluída com sucesso!');
         this.findAll();
       })
     }
