@@ -1,5 +1,5 @@
 export interface Reserva {
-    id?: string,
+    id: string,
     clienteid: string,
     mesaid: string,
     capacidade: number,

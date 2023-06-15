@@ -3,6 +3,8 @@ import { OnInit } from '@angular/core';
 import { Cliente } from '../models/cliente';
 import { ClienteService } from '../services/cliente.service';
 import { trigger, transition, animate, style } from '@angular/animations'
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -26,7 +28,7 @@ export class ReadClientesComponent implements OnInit{
   
     list: Cliente[] = [];
 
-    constructor(private service: ClienteService) { }
+    constructor(private service: ClienteService, private dialog: MatDialog) { }
   
     ngOnInit(): void {
       this.findAll();
@@ -44,6 +46,28 @@ export class ReadClientesComponent implements OnInit{
         this.service.message('Cliente excluída com sucesso!');
         this.findAll();
       })
+    }
+
+    openConfirmationDialog(cliente: Cliente): void {
+      const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+        width: '250px',
+        data: {
+          title: 'Confirmação',
+          message: 'Tem a certeza que deseja excluir o cliente ' + cliente.id + '?'
+        }
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.service.delete(cliente.id).subscribe((resposta) => {
+            this.service.successNotification();
+            this.findAll();
+          })
+        } else {
+          // User clicked "No" or closed the dialog
+          // Handle accordingly
+        }
+      });
     }
 
 }

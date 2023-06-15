@@ -35,7 +35,6 @@ export class ReadMesaComponent implements OnInit{
 
     findAll(): void {
       this.service.findAll().subscribe(resposta => {
-        console.log(resposta);
         this.list = resposta;
       })
     }
@@ -44,15 +43,15 @@ export class ReadMesaComponent implements OnInit{
       const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
         width: '250px',
         data: {
-          title: 'Confirmation',
-          message: 'Are you sure you want to delete this item?'
+          title: 'Confirmação',
+          message: 'Tem a certeza que deseja excluir a mesa ' + mesa.id + '?'
         }
       });
   
       dialogRef.afterClosed().subscribe(result => {
         if (result) {
           this.service.delete(mesa.id).subscribe((resposta) => {
-            this.service.message('Mesa excluída com sucesso!');
+            this.service.successNotification();
             this.findAll();
           })
         } else {

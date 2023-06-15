@@ -9,8 +9,26 @@
         <p>Data: {{ item.data }}</p>
 
         <div class="actions">
-            <button [routerLink]="['/reservas/update', item.id]" class="edit-carro" mat-raised-button color="primary">Editar</button>
-            <button mat-raised-button color="warn">Excluir</button>
+            <button [routerLink]="['/reservas/update', item.id]" class="btn"><strong>EDITAR</strong>
+                <div id="container-stars">
+                  <div id="stars"></div>
+                </div>
+              
+                <div id="glow">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                </div>
+            </button>
+            <button *ngIf="item?.id" (click)="openConfirmationDialog(item)" class="btn2"><strong>EXCLUIR</strong>
+                <div id="container-stars">
+                  <div id="stars"></div>
+                </div>
+              
+                <div id="glow">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                </div>
+            </button>
         </div>
     </mat-card>
 </div>

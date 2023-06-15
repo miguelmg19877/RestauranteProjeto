@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
 import { Reserva } from '../models/reserva';
 import { environment } from 'src/environments/environment.development';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +12,15 @@ export class ReservaService {
 
   constructor(private http: HttpClient) { }
   findAll(): Observable<Reserva[]> {
-    return this.http.get<Reserva[]>(environment.baseUrl + 'GetAllReservas')
+    return this.http.get<Reserva[]>(environment.baseUrl + 'GetAllReservas').pipe(
+        catchError(this.handleError)
+      );
   }
 
   delete(id: string): Observable<string> {
-    const url = `${environment.baseUrl}reserva/delete/${id}`;
-    return this.http.delete<string>(url);
+    return this.http.delete(`${environment.baseUrl}reservas/delete/${id}`, {responseType: 'text'}).pipe(
+        catchError(this.handleError)
+      );
   }
 
   create(reserva: Reserva): Observable<string> {
@@ -32,7 +36,22 @@ export class ReservaService {
     return this.http.post(environment.baseUrl + 'ModifyReservas', reserva, {responseType: 'text'});
   }
 
+  private handleError(error: HttpErrorResponse) {
+    console.log(error.status);
+    if (error.status === 404) {
+        Swal.fire('Erro', 'Não existem reservas na base de dados', 'error');
+    } 
+    if (error.status === 400) {
+        Swal.fire('Erro', 'Reserva não pode ser eliminada.', 'error');
+    }
+    return throwError(() => new Error(''));
+  }
+
   message(msg: string): void {
     console.log(msg);
   }
+
+    successNotification() {
+        Swal.fire('Sucesso', 'Reserva excluida com sucesso.', 'success');
+    }
 }

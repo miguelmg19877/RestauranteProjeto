@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, transition, animate, style } from '@angular/animations';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -19,5 +20,11 @@ import { trigger, transition, animate, style } from '@angular/animations';
   ]
 })
 export class HeaderComponent {
+
+  constructor (private router: Router, private route: ActivatedRoute) { }
+
+  inicio (): void {
+    this.router.navigate(['']);
+  }
 
 }
