@@ -1,29 +1,38 @@
 <button mat-raised-button class="novo" routerLink="create">Novo Cliente</button>
 <button mat-raised-button class="voltar" routerLink="">Voltar</button>
+
+<!-- A container to display a list of items -->
 <div class="Container" *ngFor="let item of list">
+    <!-- A card element with animation -->
     <mat-card [@slideInOut] class="simple-card">
+        <!-- Displaying the ID of the item -->
         <p>ID: {{ item.id }}</p>
+        <!-- Displaying the Name of the item -->
         <p>Nome: {{ item.nome }}</p>
+        <!-- Displaying the Phone Number of the item -->
         <p>Nº Telefone: {{ item.telefone }}</p>
+        <!-- Actions section for each item -->
         <div class="actions">
+            <!-- Button for editing the item -->
             <button [routerLink]="['/clientes/update', item.id]" class="btn"><strong>EDITAR</strong>
+                <!-- Animation elements for the button -->
                 <div id="container-stars">
-                  <div id="stars"></div>
+                    <div id="stars"></div>
                 </div>
-              
                 <div id="glow">
-                  <div class="circle"></div>
-                  <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
                 </div>
             </button>
+            <!-- Button for deleting the item -->
             <button *ngIf="item?.id" (click)="openConfirmationDialog(item)" class="btn2"><strong>EXCLUIR</strong>
+                <!-- Animation elements for the button -->
                 <div id="container-stars">
-                  <div id="stars"></div>
+                    <div id="stars"></div>
                 </div>
-              
                 <div id="glow">
-                  <div class="circle"></div>
-                  <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
                 </div>
             </button>
         </div>

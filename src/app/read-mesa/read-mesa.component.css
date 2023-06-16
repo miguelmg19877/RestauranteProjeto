@@ -7,6 +7,7 @@ div.container {
     
 }
 
+/* white card */
 .simple-card {
     background-color: #FFFDF0;
     width: 80%;
@@ -15,6 +16,7 @@ div.container {
     margin-bottom: 20px;
 }
 
+/* botao novo */
 .novo {
     padding: 10px 20px;
     text-align: center;
@@ -26,6 +28,7 @@ div.container {
     margin-top: 20px;
 }
 
+/* botao return */
 .voltar {
     padding: 10px 20px;
     text-align: center;
@@ -42,6 +45,9 @@ div.container {
   justify-content: space-between;
 }
 
+
+
+/* botões */
 .btn {
     display: flex;
     margin-left: 20px;

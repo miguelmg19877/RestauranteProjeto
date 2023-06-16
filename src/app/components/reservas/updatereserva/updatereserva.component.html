@@ -1,29 +1,39 @@
 <form [formGroup]="reservaForm" (ngSubmit)="onSubmit()">
+    <!-- The form starts here -->
+
+    <!-- ID Do cliente -->
     <mat-form-field appearance="fill">
         <mat-label>ID Do cliente</mat-label>
         <input matInput formControlName="clienteid">
     </mat-form-field>
     <br>
+
+    <!-- ID da Mesa -->
     <mat-form-field appearance="fill">
         <mat-label>ID da Mesa</mat-label>
         <input matInput formControlName="mesaid">
     </mat-form-field>
     <br>
+
+    <!-- Input Capacidade da Mesa -->
     <mat-form-field appearance="fill">
         <mat-label>Capacidade da Mesa</mat-label>
         <input matInput formControlName="capacidade">
     </mat-form-field>
     <br>
+
+    <!-- Input Data da Reserva -->
     <mat-form-field appearance="fill">
         <mat-label>Data da Reserva</mat-label>
         <input matInput formControlName="data">
     </mat-form-field>
-    
-    
+
+    <!-- Button -->
     <button mat-stroked-button color="primary" type="submit">
         Guardar Alterações
     </button>
-    
+
+    <!-- Button -->
     <button (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
     
 </form>

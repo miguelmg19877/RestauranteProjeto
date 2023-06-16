@@ -1,32 +1,43 @@
 <button mat-raised-button class="novo" routerLink="create">Nova Reserva</button>
 <button mat-raised-button class="voltar" routerLink="">Voltar</button>
+
+<!-- A container to display a list of items -->
 <div class="Container" *ngFor="let item of list">
+    <!-- A card element with slide-in animation -->
     <mat-card [@slideInOut] class="simple-card">
+        <!-- Displaying the ID of the item -->
         <p>ID: {{ item.id }}</p>
+        <!-- Displaying the ID of the client associated with the item -->
         <p>ID Do Cliente: {{ item.clienteid }}</p>
+        <!-- Displaying the ID of the table associated with the item -->
         <p>ID Da Mesa: {{ item.mesaid }}</p>
+        <!-- Displaying the capacity of the table associated with the item -->
         <p>Capacidade: {{ item.capacidade }}</p>
+        <!-- Displaying the date of the reservation -->
         <p>Data: {{ item.data }}</p>
 
+        <!-- Actions section for each item -->
         <div class="actions">
+            <!-- Button for editing the item -->
             <button [routerLink]="['/reservas/update', item.id]" class="btn"><strong>EDITAR</strong>
+                <!-- Animation elements for the button -->
                 <div id="container-stars">
-                  <div id="stars"></div>
+                    <div id="stars"></div>
                 </div>
-              
                 <div id="glow">
-                  <div class="circle"></div>
-                  <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
                 </div>
             </button>
+            <!-- Button for deleting the item -->
             <button *ngIf="item?.id" (click)="openConfirmationDialog(item)" class="btn2"><strong>EXCLUIR</strong>
+                <!-- Animation elements for the button -->
                 <div id="container-stars">
-                  <div id="stars"></div>
+                    <div id="stars"></div>
                 </div>
-              
                 <div id="glow">
-                  <div class="circle"></div>
-                  <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
                 </div>
             </button>
         </div>

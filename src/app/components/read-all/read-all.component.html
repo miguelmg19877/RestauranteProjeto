@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-content>Simple card</mat-card-content>
+</mat-card>
+
+<section>
+    
+    <div class="example-button-row">
+      
+      <button mat-button color="warn">Drugs?</button>
+      
+      <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+    </div>
+  </section>
+
+<div class="container" *ngFor="let item of list">
+<mat-card class ="Simple card">
+<p>{{item.id}}</p>
+<p>{{item.marca}}</p>
+<p>{{item.tipo}}</p>
+
+<div class="actions">
+<button class = "edit-carro" mat-stroked-button color="warn">Editar</button>
+</div>
+
+</mat-card>
+</div>
